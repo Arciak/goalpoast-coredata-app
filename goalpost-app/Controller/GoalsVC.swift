@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalsVC: UIViewController {
     
@@ -15,7 +16,8 @@ class GoalsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let goal = Goal()
+        goal.goalCompletionVal = Int32(exactly: 12.0)
     }
 
     @IBAction func addGoalBtnWasPressed(_ sender: Any) {
