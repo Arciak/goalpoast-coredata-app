@@ -14,6 +14,8 @@
 		DB1855B625CD646300A8E020 /* goalpost_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1855B425CD646300A8E020 /* goalpost_app.xcdatamodeld */; };
 		DB1855B825CD646400A8E020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1855B725CD646400A8E020 /* Assets.xcassets */; };
 		DB1855BB25CD646400A8E020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1855B925CD646400A8E020 /* LaunchScreen.storyboard */; };
+		DB3EC99C25D5C2DA00038354 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3EC99B25D5C2DA00038354 /* GoalType.swift */; };
+		DB8C9D1525DB149600A0AC46 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C9D1425DB149600A0AC46 /* CreateGoalVC.swift */; };
 		DBEDBD1C25D31BBB000AB31E /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEDBD1B25D31BBB000AB31E /* GoalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		DB1855B725CD646400A8E020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1855BA25CD646400A8E020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1855BC25CD646400A8E020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3EC99B25D5C2DA00038354 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
+		DB8C9D1425DB149600A0AC46 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		DBEDBD1B25D31BBB000AB31E /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1855AF25CD646300A8E020 /* GoalsVC.swift */,
+				DB8C9D1425DB149600A0AC46 /* CreateGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 		DB1855C425CD64D800A8E020 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				DB3EC99B25D5C2DA00038354 /* GoalType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -132,7 +138,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Artur Zarzecki";
 				TargetAttributes = {
 					DB1855A725CD646300A8E020 = {
@@ -178,7 +184,9 @@
 			files = (
 				DBEDBD1C25D31BBB000AB31E /* GoalCell.swift in Sources */,
 				DB1855B025CD646300A8E020 /* GoalsVC.swift in Sources */,
+				DB3EC99C25D5C2DA00038354 /* GoalType.swift in Sources */,
 				DB1855AC25CD646300A8E020 /* AppDelegate.swift in Sources */,
+				DB8C9D1525DB149600A0AC46 /* CreateGoalVC.swift in Sources */,
 				DB1855B625CD646300A8E020 /* goalpost_app.xcdatamodeld in Sources */,
 				DB1855AE25CD646300A8E020 /* SceneDelegate.swift in Sources */,
 			);
@@ -232,6 +240,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -292,6 +301,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
