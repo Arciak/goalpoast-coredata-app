@@ -255,7 +255,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="shortTermBtnWasPressed:" destination="7qY-PU-mor" eventType="touchUpInside" id="Jzz-as-HFl"/>
+                                                    <action selector="shortTermBtnWasPressed:" destination="7qY-PU-mor" eventType="touchUpInside" id="51p-hL-NYm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-zH-v5n">
@@ -269,7 +269,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="longTermBtnWasPressed:" destination="7qY-PU-mor" eventType="touchUpInside" id="5b6-Sj-SBj"/>
+                                                    <action selector="longTermBtnWasPressed:" destination="7qY-PU-mor" eventType="touchUpInside" id="qEy-x9-xb8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -313,8 +313,9 @@
                     </view>
                     <connections>
                         <outlet property="goalTextView" destination="fDd-KF-6Bg" id="c86-Q0-9uE"/>
-                        <outlet property="longTermBtn" destination="vbh-zH-v5n" id="q0t-Wd-jFW"/>
-                        <outlet property="shortTermBtn" destination="vbh-zH-v5n" id="Gji-V9-LgC"/>
+                        <outlet property="longTermBtn" destination="vbh-zH-v5n" id="xqm-VE-uk1"/>
+                        <outlet property="nextBtn" destination="58y-s8-6Is" id="zsm-42-4oy"/>
+                        <outlet property="shortTermBtn" destination="ZS0-ZI-4PF" id="6W3-wF-pAD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDz-gL-QuF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
