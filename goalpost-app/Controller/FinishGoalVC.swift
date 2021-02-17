@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FinishGoalVC: UIViewController, UITextFieldDelegate {
     
@@ -31,6 +32,37 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
         // Pass Data into Core Data Goal Model
+        if pointsTxtField.text != "" {
+            self.save { (complete) in
+                if complete {
+                    dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        dismissDetail()
+    }
+    
+    func save(completion: (_ finished: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: managedContext) // now know where save data
+        // set up model
+        goal.goalDescription = goalDescription
+        goal.goalType = goalType.rawValue
+        goal.goalCompletionVal = Int32(pointsTxtField.text!)!
+        goal.goalProgress = Int32(0)
+        
+        // push to dtorage persistent storage
+        do {
+            try managedContext.save()
+            print("Successfully saved data")
+            completion(true)
+        } catch {
+            debugPrint("Could not save: \(error.localizedDescription)")
+            completion(false)
+        }
+        
+    }
 }

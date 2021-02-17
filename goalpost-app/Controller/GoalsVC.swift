@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate // we can access form anywhere
+
 class GoalsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
