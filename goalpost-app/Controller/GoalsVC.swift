@@ -14,8 +14,11 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate // we can access
 class GoalsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var undoHighConstraint: NSLayoutConstraint!
+    
     
     var goals: [Goal] = []
+    var removedGoal: [RemovedGoal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,14 @@ class GoalsVC: UIViewController {
                 } else {
                     tableView.isHidden = true
                 }
+                
+                if removedGoal.count == 0 {
+                    undoHighConstraint.constant = 0
+                    print("Frame 0")
+                } else {
+                    undoHighConstraint.constant = 50
+                    print("Frame 50")
+                }
             }
         }
     }
@@ -47,6 +58,28 @@ class GoalsVC: UIViewController {
         guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") else { return }
         
         presentDetail(createGoalVC)
+    }
+    
+    @IBAction func undoPressedBtn(_ sender: Any) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: managedContext)
+        goal.goalDescription = removedGoal[(removedGoal.endIndex - 1)].goalDescription
+        goal.goalType = removedGoal[(removedGoal.endIndex - 1)].goalType
+        goal.goalCompletionVal = removedGoal[(removedGoal.endIndex - 1)].goalCompletionVal
+        goal.goalProgress = removedGoal[(removedGoal.endIndex - 1)].goalProgress
+        
+        managedContext.delete(removedGoal[(removedGoal.endIndex - 1)])
+        
+        do {
+            try managedContext.save()
+            print("Successfully removed goal!")
+        } catch {
+            debugPrint("Could not remove: \(error.localizedDescription)")
+        }
+        
+        fetchCoreDataObjects()
+        tableView.reloadData()
+        
     }
     
 }
@@ -122,6 +155,11 @@ extension GoalsVC {
     func removeGoal(atIndexPath indexPath: IndexPath) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
+        let restoreGoal = RemovedGoal(context: managedContext)
+        restoreGoal.goalDescription = goals[indexPath.row].goalDescription
+        restoreGoal.goalType = goals[indexPath.row].goalType
+        restoreGoal.goalCompletionVal = goals[indexPath.row].goalCompletionVal
+        restoreGoal.goalProgress = Int32(0)
         managedContext.delete(goals[indexPath.row])
         
         do {
@@ -136,10 +174,12 @@ extension GoalsVC {
     func fetch(completion: (_ complete: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        let fetchRequestGoals = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        let fetchRequestRemovedGoal = NSFetchRequest<NSFetchRequestResult>(entityName: "RemovedGoal")
         
         do {
-            goals = try managedContext.fetch(fetchRequest) as! [Goal]
+            goals = try managedContext.fetch(fetchRequestGoals) as! [Goal]
+            removedGoal = try managedContext.fetch(fetchRequestRemovedGoal) as! [RemovedGoal]
             print("Succesfully fetched data.")
             completion(true)
         } catch  {

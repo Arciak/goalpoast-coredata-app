@@ -77,7 +77,7 @@
                                 </subviews>
                             </stackView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BxC-Sa-irb">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="547"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="70" id="QgE-dR-4PI" customClass="GoalCell" customModule="goalpost_app">
@@ -174,28 +174,62 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jx-gc-MPB">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Removed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swi-7b-lxR">
+                                        <rect key="frame" x="16" y="15" width="110.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQp-7q-NBZ">
+                                        <rect key="frame" x="284" y="5.5" width="66" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <state key="normal" title="UNDO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoPressedBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Iy-aw-ATY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="swi-7b-lxR" firstAttribute="leading" secondItem="8jx-gc-MPB" secondAttribute="leading" constant="16" id="4kf-5D-JYn"/>
+                                    <constraint firstItem="KQp-7q-NBZ" firstAttribute="centerY" secondItem="swi-7b-lxR" secondAttribute="centerY" id="8VV-ki-RQp"/>
+                                    <constraint firstAttribute="height" constant="50" id="IBG-DN-ZeH"/>
+                                    <constraint firstItem="swi-7b-lxR" firstAttribute="centerY" secondItem="8jx-gc-MPB" secondAttribute="centerY" id="fgg-N3-e7T"/>
+                                    <constraint firstItem="swi-7b-lxR" firstAttribute="top" secondItem="8jx-gc-MPB" secondAttribute="top" constant="15" id="vyH-pW-Get"/>
+                                    <constraint firstAttribute="trailing" secondItem="KQp-7q-NBZ" secondAttribute="trailing" constant="25" id="xcD-bC-2aM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BxC-Sa-irb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0rb-VV-JsZ"/>
+                            <constraint firstItem="8jx-gc-MPB" firstAttribute="top" secondItem="BxC-Sa-irb" secondAttribute="bottom" id="1ex-5P-tYg"/>
+                            <constraint firstItem="8jx-gc-MPB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="56y-ak-uNa"/>
                             <constraint firstItem="BxC-Sa-irb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5an-uE-Hgh"/>
                             <constraint firstItem="gRz-RF-6Ew" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bcg-1R-Bw7"/>
                             <constraint firstItem="gRz-RF-6Ew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gqu-03-ytx"/>
                             <constraint firstItem="ZbV-5G-7kh" firstAttribute="top" secondItem="gRz-RF-6Ew" secondAttribute="bottom" constant="75" id="cjE-xZ-FTS"/>
+                            <constraint firstItem="8jx-gc-MPB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="e2j-TO-eyX"/>
                             <constraint firstItem="BxC-Sa-irb" firstAttribute="top" secondItem="gRz-RF-6Ew" secondAttribute="bottom" id="f2n-iA-syh"/>
+                            <constraint firstItem="8jx-gc-MPB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hup-q2-Wpe"/>
                             <constraint firstItem="ZbV-5G-7kh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jRf-Sn-ftj"/>
                             <constraint firstItem="gRz-RF-6Ew" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rj2-XX-9ev"/>
-                            <constraint firstItem="BxC-Sa-irb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="t7l-6V-4dq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="BxC-Sa-irb" id="HWi-o4-Eao"/>
+                        <outlet property="undoHighConstraint" destination="IBG-DN-ZeH" id="R4u-wb-rHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758" y="36"/>
+            <point key="canvasLocation" x="-759.20000000000005" y="35.532233883058474"/>
         </scene>
         <!--Create GoalVC-->
         <scene sceneID="8Ql-Qy-WKx">
