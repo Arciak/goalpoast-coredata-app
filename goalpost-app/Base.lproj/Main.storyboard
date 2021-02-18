@@ -135,17 +135,38 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2C-ba-ckQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHi-QQ-t9A">
+                                                            <rect key="frame" x="61" y="17" width="253.5" height="36"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.47393849852858161" blue="0.021097742372832795" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="BHi-QQ-t9A" firstAttribute="centerY" secondItem="j2C-ba-ckQ" secondAttribute="centerY" id="hAj-SG-Tcy"/>
+                                                        <constraint firstItem="BHi-QQ-t9A" firstAttribute="centerX" secondItem="j2C-ba-ckQ" secondAttribute="centerX" id="oE4-ug-mKZ"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="j2C-ba-ckQ" secondAttribute="trailing" id="IJZ-az-97r"/>
+                                                <constraint firstItem="j2C-ba-ckQ" firstAttribute="leading" secondItem="1cS-8q-Ded" secondAttribute="leading" id="PHs-en-Jd1"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KYA-K7-h0C" secondAttribute="bottom" id="UT4-EE-RCR"/>
                                                 <constraint firstItem="KYA-K7-h0C" firstAttribute="top" secondItem="1cS-8q-Ded" secondAttribute="topMargin" id="YgB-37-pK3"/>
+                                                <constraint firstItem="j2C-ba-ckQ" firstAttribute="top" secondItem="1cS-8q-Ded" secondAttribute="top" id="bfr-6a-w9G"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Tba-RW-CN4" secondAttribute="bottom" id="k16-E8-XIZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="j2C-ba-ckQ" secondAttribute="bottom" id="l5N-xm-dNI"/>
                                                 <constraint firstItem="Tba-RW-CN4" firstAttribute="top" secondItem="1cS-8q-Ded" secondAttribute="topMargin" id="tse-Sz-LFN"/>
                                                 <constraint firstItem="Tba-RW-CN4" firstAttribute="leading" secondItem="1cS-8q-Ded" secondAttribute="leadingMargin" id="tt9-4t-hyF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KYA-K7-h0C" secondAttribute="trailing" id="wII-jT-5QM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completionView" destination="j2C-ba-ckQ" id="Nlc-Ad-SgD"/>
                                             <outlet property="goalDescriptionLbl" destination="UMu-bK-IWi" id="FKE-kY-Up6"/>
                                             <outlet property="goalProgressLbl" destination="KYA-K7-h0C" id="myC-Ia-wAP"/>
                                             <outlet property="goalTypeLbl" destination="PSV-sB-LD0" id="wrx-ct-wAK"/>
